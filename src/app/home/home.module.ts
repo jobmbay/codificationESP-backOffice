@@ -6,6 +6,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ProjetsComponent } from './projets/projets.component';
 import { ProjetDetailsComponent } from './projets/projet-details/projet-details.component';
+import { CreerEtageComponent } from './creer-etage/creer-etage.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { ProjetDetailsComponent } from './projets/projet-details/projet-details.
     Ng2SmartTableModule,
     BrowserAnimationsModule
   ],
-  declarations: [ProjetsComponent, ProjetDetailsComponent]
+  declarations: [ProjetsComponent, ProjetDetailsComponent, CreerEtageComponent]
 })
 export class HomeModule { }
