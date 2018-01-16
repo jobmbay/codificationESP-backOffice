@@ -6,7 +6,7 @@
     </div>
   </div>
   <br>
-  <div class="col-lg-6">
+  <div *ngFor="let batiment of batiments" class="col-lg-6">
     <div>
       <div class="card card-nav-tabs">
         <div class="card-header" data-background-color="purple">
@@ -15,220 +15,30 @@
               <ul class="nav nav-tabs" data-tabs="tabs">
                 <li class="">
                   <h2 data-toggle="tab">
-                    <i class="material-icons">account_balance</i>
-                    Liste des offres
-                    <div class="ripple-container"></div>
-                  </h2>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="card-content">
-          <div class="tab-content">
-            <div class="card-content">
-              <div class="tab-content">
-                <div class="tab-pane active" id="profile">
-                  <table class="table">
-                    <tbody>
-                    <tr>
-                      <td>
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" name="optionsCheckboxes" checked>
-                          </label>
+                    <div class="row">
+                      <div class="col-lg-8">
+                        <i class="material-icons">account_balance</i>
+                        <span>{{batiment.label}}</span>
+                        <div class="form-group label-floating">
+                          <input style="font-size: 35px; color: white; " [(ngModel)]="batiment.label" type="text" class="form-control">
                         </div>
-                      </td>
-                      <td>Sign contract for "What are conference organizers afraid of?"</td>
-                      <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                      </div>
+                      <div [hidden]="modif==batiment.id" class="end col-lg-2">
+                        <button (click)="modifBatiment(batiment.id)" style="background: white;" type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
                           <i class="material-icons">edit</i>
                         </button>
-                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                      </div>
+                      <div [hidden]="modif==batiment.id" class="col-lg-2">
+                        <button style="background: white;" type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
                           <i class="material-icons">close</i>
                         </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" name="optionsCheckboxes">
-                          </label>
-                        </div>
-                      </td>
-                      <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                      <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                          <i class="material-icons">edit</i>
+                      </div>
+                      <div [hidden]="modif!=batiment.id" class="col-lg-2">
+                        <button (click)="validateModif();" style="background: white;" type="button" rel="tooltip" title="validate" class="btn btn-success btn-simple btn-xs">
+                          <i class="material-icons">check</i>
                         </button>
-                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                          <i class="material-icons">close</i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" name="optionsCheckboxes">
-                          </label>
-                        </div>
-                      </td>
-                      <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                      </td>
-                      <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                          <i class="material-icons">edit</i>
-                        </button>
-                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                          <i class="material-icons">close</i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" name="optionsCheckboxes" checked>
-                          </label>
-                        </div>
-                      </td>
-                      <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                      <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                          <i class="material-icons">edit</i>
-                        </button>
-                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                          <i class="material-icons">close</i>
-                        </button>
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="tab-pane" id="messages">
-                  <table class="table">
-                    <tbody>
-                    <tr>
-                      <td>
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" name="optionsCheckboxes" checked>
-                          </label>
-                        </div>
-                      </td>
-                      <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                      </td>
-                      <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                          <i class="material-icons">edit</i>
-                        </button>
-                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                          <i class="material-icons">close</i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" name="optionsCheckboxes">
-                          </label>
-                        </div>
-                      </td>
-                      <td>Sign contract for "What are conference organizers afraid of?"</td>
-                      <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                          <i class="material-icons">edit</i>
-                        </button>
-                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                          <i class="material-icons">close</i>
-                        </button>
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="tab-pane" id="settings">
-                  <table class="table">
-                    <tbody>
-                    <tr>
-                      <td>
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" name="optionsCheckboxes">
-                          </label>
-                        </div>
-                      </td>
-                      <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                      <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                          <i class="material-icons">edit</i>
-                        </button>
-                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                          <i class="material-icons">close</i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" name="optionsCheckboxes" checked>
-                          </label>
-                        </div>
-                      </td>
-                      <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                      </td>
-                      <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                          <i class="material-icons">edit</i>
-                        </button>
-                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                          <i class="material-icons">close</i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" name="optionsCheckboxes">
-                          </label>
-                        </div>
-                      </td>
-                      <td>Sign contract for "What are conference organizers afraid of?"</td>
-                      <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                          <i class="material-icons">edit</i>
-                        </button>
-                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                          <i class="material-icons">close</i>
-                        </button>
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-6">
-    <div>
-      <div class="card card-nav-tabs">
-        <div class="card-header" data-background-color="purple">
-          <div class="nav-tabs-navigation">
-            <div class="nav-tabs-wrapper">
-              <ul class="nav nav-tabs" data-tabs="tabs">
-                <li class="">
-                  <h2 data-toggle="tab">
-                    <i class="material-icons">account_balance</i>
-                    Liste des offres
+                      </div>
+                    </div>
                     <div class="ripple-container"></div>
                   </h2>
                 </li>

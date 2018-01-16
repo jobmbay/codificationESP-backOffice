@@ -12,6 +12,7 @@ import {DataService} from "../../data.service";
 export class OffresComponent implements OnInit {
 
   batiments;
+  modif;
 
   constructor(private dataService: DataService, private router: Router, private dashboardService: DashboardService) { }
 
@@ -20,14 +21,27 @@ export class OffresComponent implements OnInit {
       .subscribe(
         data=>{
           this.batiments = data;
-          console.log(this.batiments)
+        },
+        err=> {
+          console.log(err);
         }
       );
+  }
+
+  modifBatiment(id)
+  {
+    this.modif = id;
   }
 
   creerBatimentPage()
   {
     this.router.navigate(["/home/batiments/creer"])
+  }
+
+  validateModif()
+  {
+
+    this.modif="";
   }
 
 }

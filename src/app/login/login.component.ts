@@ -22,17 +22,18 @@ export class LoginComponent implements OnInit {
 
   login()
   {
-    this.dataService.login(this.user).then(
-      data=>{
-        this.dataService.setUser(data["user"]);
-        this.dataService.setTocken(data["id"]);
-        this.router.navigate(['home/dashboard']);
-      },
-      err=> {
-        this.user.password="";
-        console.log(err)
-      }
-    );
+    this.dataService.login(this.user)
+      .subscribe(
+        data=>{
+          this.dataService.setUser(data["user"]);
+          this.dataService.setTocken(data["id"]);
+          this.router.navigate(['home/dashboard']);
+        },
+        err=> {
+          this.user.password="";
+          console.log(err)
+        }
+      );
   }
 
 }

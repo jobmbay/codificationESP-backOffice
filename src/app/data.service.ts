@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Response, Headers} from "@angular/http";
+import {Response, Headers, Http} from "@angular/http";
+
+import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class DataService {
@@ -9,19 +10,13 @@ export class DataService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
 
-  constructor(public http: HttpClient) {
+  constructor(public http: Http) {
     console.log('Hello DataProvider Provider');
   }
 
   login(data) {
-    return new Promise((resolve, reject) => {
-      this.http.post("https://codification-esp-api.herokuapp.com/api/Etudiants/login?include=user", data)
-        .subscribe(res => {
-          resolve(res);
-        }, (err) => {
-          reject(err);
-        });
-    });
+    return this.http.post(this.baseUrl + "Etudiants/login?include=user", data)
+      .map((res:Response) => res.json());
   }
 
   post(url,data) {
