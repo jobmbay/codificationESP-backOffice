@@ -1,0 +1,469 @@
+<div class="">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header" data-background-color="purple">
+            <h2 data-toggle="tab">
+              <i class="material-icons">assessment</i>
+              {{offre.titre}}
+              <div class="ripple-container"></div>
+            </h2>
+          </div>
+          <div class="card-content">
+            <div id="typography">
+              <div class="row">
+                <div class="title col-md-10">
+                  <h2>{{offre.typeOffre}}</h2>
+                </div>
+                <div class="row press col-md-2">
+                  <h4>Etat de l'offre</h4>
+                  <input (change)="changeChecked();" type="checkbox" id="unchecked" class="cbx hidden"/>
+                  <label for="unchecked" class="lbl"></label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4">
+                  <h2>{{offre.secteurActivite}}/{{offre.typeContrat}}/{{offre.lieuPoste}}</h2>
+                </div>
+                <div class="col-md-4">
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-9">
+                </div>
+                <div class="col-md-3">
+                  <span>Date : {{offre.dateOffre | date:'dd-MM-yyyy'}}</span>
+                  <br>
+                  <span>Salaire : {{offre.salaire}}Fcfa</span>
+                </div>
+              </div>
+              <br><br>
+              <div id="preview" class="">
+
+              </div>
+              <br>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-md-12">
+                <div class="card card-nav-tabs">
+                  <div class="card-header" data-background-color="purple">
+                    <div class="nav-tabs-navigation">
+                      <div class="nav-tabs-wrapper">
+                        <ul class="nav nav-tabs" data-tabs="tabs">
+                          <li class="">
+                            <h3 data-toggle="tab">
+                              <i class="material-icons">local_offer</i>
+                              Centres d'interêt
+                              <div class="ripple-container"></div>
+                            </h3>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="profile">
+                        <table class="table">
+                          <tbody>
+                          <tr>
+                            <td *ngFor="let ce of offre.centreInteretConcernes">Sign contract for "What are conference organizers afraid of?"</td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="tab-pane" id="messages">
+                        <table class="table">
+                          <tbody>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" name="optionsCheckboxes" checked>
+                                </label>
+                              </div>
+                            </td>
+                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                            </td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" name="optionsCheckboxes">
+                                </label>
+                              </div>
+                            </td>
+                            <td>Sign contract for "What are conference organizers afraid of?"</td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="tab-pane" id="settings">
+                        <table class="table">
+                          <tbody>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" name="optionsCheckboxes">
+                                </label>
+                              </div>
+                            </td>
+                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" name="optionsCheckboxes" checked>
+                                </label>
+                              </div>
+                            </td>
+                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                            </td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" name="optionsCheckboxes">
+                                </label>
+                              </div>
+                            </td>
+                            <td>Sign contract for "What are conference organizers afraid of?"</td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-12">
+                <div class="card card-nav-tabs">
+                  <div class="card-header" data-background-color="purple">
+                    <div class="nav-tabs-navigation">
+                      <div class="nav-tabs-wrapper">
+                        <ul class="nav nav-tabs" data-tabs="tabs">
+                          <li class="">
+                            <h3 data-toggle="tab">
+                              <i class="material-icons">local_offer</i>
+                              Diplômes
+                              <div class="ripple-container"></div>
+                            </h3>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="profile">
+                        <table class="table">
+                          <tbody>
+                          <tr>
+                            <td *ngFor="let ce of offre.centreInteretConcernes">Sign contract for "What are conference organizers afraid of?"</td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="tab-pane" id="messages">
+                        <table class="table">
+                          <tbody>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" name="optionsCheckboxes" checked>
+                                </label>
+                              </div>
+                            </td>
+                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                            </td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" name="optionsCheckboxes">
+                                </label>
+                              </div>
+                            </td>
+                            <td>Sign contract for "What are conference organizers afraid of?"</td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="tab-pane" id="settings">
+                        <table class="table">
+                          <tbody>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" name="optionsCheckboxes">
+                                </label>
+                              </div>
+                            </td>
+                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" name="optionsCheckboxes" checked>
+                                </label>
+                              </div>
+                            </td>
+                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                            </td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" name="optionsCheckboxes">
+                                </label>
+                              </div>
+                            </td>
+                            <td>Sign contract for "What are conference organizers afraid of?"</td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-md-12 col-lg-offset-3">
+                <div class="card card-nav-tabs">
+                  <div class="card-header" data-background-color="purple">
+                    <div class="nav-tabs-navigation">
+                      <div class="nav-tabs-wrapper">
+                        <ul class="nav nav-tabs" data-tabs="tabs">
+                          <li class="">
+                            <h3 data-toggle="tab">
+                              <i class="material-icons">local_offer</i>
+                              Competences
+                              <div class="ripple-container"></div>
+                            </h3>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-content">
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="profile">
+                        <table class="table">
+                          <tbody>
+                          <tr>
+                            <td *ngFor="let ce of offre.competenceConcernes">Sign contract for "What are conference organizers afraid of?"</td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="tab-pane" id="messages">
+                        <table class="table">
+                          <tbody>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" name="optionsCheckboxes" checked>
+                                </label>
+                              </div>
+                            </td>
+                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                            </td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" name="optionsCheckboxes">
+                                </label>
+                              </div>
+                            </td>
+                            <td>Sign contract for "What are conference organizers afraid of?"</td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="tab-pane" id="settings">
+                        <table class="table">
+                          <tbody>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" name="optionsCheckboxes">
+                                </label>
+                              </div>
+                            </td>
+                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" name="optionsCheckboxes" checked>
+                                </label>
+                              </div>
+                            </td>
+                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                            </td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" name="optionsCheckboxes">
+                                </label>
+                              </div>
+                            </td>
+                            <td>Sign contract for "What are conference organizers afraid of?"</td>
+                            <td class="td-actions text-right">
+                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                <i class="material-icons">edit</i>
+                              </button>
+                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                <i class="material-icons">close</i>
+                              </button>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
