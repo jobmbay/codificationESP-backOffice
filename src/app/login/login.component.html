@@ -1,0 +1,32 @@
+<div class="login-container">
+  <!-- Pen Title-->
+  <div class="pen-title">
+    <h3>Admin CodificationESP</h3><span>Pen <i class='fa fa-code'></i> by <a href='#'>Esp team</a></span>
+  </div>
+  <div class="container">
+    <div class=""></div>
+    <div class="card">
+      <h3 class="title">Login</h3>
+      <form>
+        <div class="input-container">
+          <input name="username" [(ngModel)]="user.username" type="text" id="username" required="required"/>
+          <label for="username">Username</label>
+          <div class="bar"></div>
+        </div>
+        <div class="input-container">
+          <input name="password" [(ngModel)]="user.password" type="password" id="password" required="required"/>
+          <label for="password">Password</label>
+          <div class="bar"></div>
+        </div>
+        <p style="text-align: center;"><button (click)="login();" class="btn" style="background: purple;">Se connecter</button></p>
+        <div class="footer"><a href="#">Forgot your password?</a></div>
+      </form>
+    </div>
+    <div class="card alt">
+      <div class="toggle">
+        <img style="border-radius: 100%; margin-top: -290px; width: 90%;" src="assets/img/esp-dakar.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <a [routerLink]="['/home/dashboard']">go to home acceuil !</a> -->
