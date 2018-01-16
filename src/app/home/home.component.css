@@ -1,0 +1,7 @@
+.banner
+{
+  position: fixed;
+  z-index: 999999999;
+  width: 83%;
+  background: white;
+}
