@@ -57,6 +57,11 @@ export class OffresComponent implements OnInit {
     this.modif="";
   }
 
+  AnuulerSuppAndModef()
+  {
+    this.modif="";
+  }
+
   validateSupp(id)
   {
     this.dataService.delete("Batiments", id)

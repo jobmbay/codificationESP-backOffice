@@ -22,7 +22,7 @@ const HOME_ROUTES : Routes =[
       {path: 'batiments/liste', component: OffresComponent},
       {path: 'batiments/creer', component: CreerBatimentComponent},
       {path: 'offres/details', component: OfferDetailsComponent},
-      {path: 'projets', component: ProjetsComponent},
+      {path: 'etages/liste', component: ProjetsComponent},
       {path: 'projets/details', component: ProjetDetailsComponent}
     ]
   }

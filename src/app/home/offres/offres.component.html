@@ -29,7 +29,7 @@
                         </button>
                       </div>
                       <div [hidden]="modif==batiment.id" class="col-lg-2">
-                        <button style="background: white;" type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                        <button (click)="validateSupp(batiment.id)" style="background: white;" type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
                           <i class="material-icons">close</i>
                         </button>
                       </div>
