@@ -19,7 +19,7 @@
                       <div class="col-lg-8">
                         <i class="material-icons">account_balance</i>
                         <span>{{batiment.label}}</span>
-                        <div class="form-group label-floating">
+                        <div [hidden]="modif!=batiment.id" class="form-group label-floating">
                           <input style="font-size: 35px; color: white; " [(ngModel)]="batiment.label" type="text" class="form-control">
                         </div>
                       </div>
@@ -34,7 +34,7 @@
                         </button>
                       </div>
                       <div [hidden]="modif!=batiment.id" class="col-lg-2">
-                        <button (click)="validateModif();" style="background: white;" type="button" rel="tooltip" title="validate" class="btn btn-success btn-simple btn-xs">
+                        <button (click)="validateModif(batiment);" style="background: white;" type="button" rel="tooltip" title="validate" class="btn btn-success btn-simple btn-xs">
                           <i class="material-icons">check</i>
                         </button>
                       </div>

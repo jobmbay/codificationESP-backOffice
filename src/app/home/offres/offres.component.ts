@@ -17,6 +17,11 @@ export class OffresComponent implements OnInit {
   constructor(private dataService: DataService, private router: Router, private dashboardService: DashboardService) { }
 
   ngOnInit() {
+    this.initialiseData();
+  }
+
+  initialiseData()
+  {
     this.dataService.get("Batiments")
       .subscribe(
         data=>{
@@ -38,9 +43,31 @@ export class OffresComponent implements OnInit {
     this.router.navigate(["/home/batiments/creer"])
   }
 
-  validateModif()
+  validateModif(batiment)
   {
+    this.dataService.patch("Batiments", batiment)
+      .subscribe(
+        data=> {
+          this.initialiseData();
+        },
+        err=> {
+          console.log(err);
+        }
+      );
+    this.modif="";
+  }
 
+  validateSupp(id)
+  {
+    this.dataService.delete("Batiments", id)
+      .subscribe(
+        data=> {
+          this.initialiseData();
+        },
+        err=> {
+          console.log(err);
+        }
+      );
     this.modif="";
   }
 

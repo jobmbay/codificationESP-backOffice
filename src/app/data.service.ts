@@ -24,6 +24,16 @@ export class DataService {
       .map((res:Response) => res.json());
   }
 
+  patch(url,data) {
+    return this.http.patch(this.baseUrl + url + "/" + data.id, data)
+      .map((res:Response) => res.json());
+  }
+
+  delete(url,id) {
+    return this.http.delete(this.baseUrl + url + "/" + id,)
+      .map((res:Response) => res.json());
+  }
+
   get(url) {
     return this.http.get(this.baseUrl + url)
       .map((res:Response) => res.json());
