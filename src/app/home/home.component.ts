@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.dataService.getUser();
-    console.log(this.user);
   }
 
   deconnexion()

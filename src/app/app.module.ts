@@ -21,7 +21,6 @@ import { CreerBatimentComponent } from './home/creer-batiment/creer-batiment.com
     AppComponent,
     HomeComponent,
     LoginComponent,
-    DashboardComponent,
     OffresComponent,
     OfferDetailsComponent,
     CreerBatimentComponent

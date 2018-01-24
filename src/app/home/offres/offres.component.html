@@ -54,75 +54,50 @@
                   <table class="table">
                     <tbody>
                     <tr>
-                      <td>
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" name="optionsCheckboxes" checked>
-                          </label>
-                        </div>
-                      </td>
-                      <td>Sign contract for "What are conference organizers afraid of?"</td>
-                      <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                          <i class="material-icons">edit</i>
-                        </button>
-                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                          <i class="material-icons">close</i>
-                        </button>
-                      </td>
+                      <th>Etage</th>
+                      <th>Nbr chambre</th>
+                      <th>Nbr position</th>
+                      <th>Demeurant</th>
+                      <th class="td-actions text-right">
+                        Action
+                      </th>
                     </tr>
-                    <tr>
-                      <td>
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" name="optionsCheckboxes">
-                          </label>
-                        </div>
-                      </td>
-                      <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                      <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                    <tr *ngFor="let etage of batiment.etages">
+                      <td *ngIf="etageSelected != etage.numero || baimentId != batiment.id">Etage {{etage.numero}}</td>
+                      <td *ngIf="etageSelected != etage.numero || baimentId != batiment.id">{{etage.chambres.length}}</td>
+                      <td *ngIf="etageSelected != etage.numero || baimentId != batiment.id">{{etage.chambres[0].nbposition}}</td>
+                      <td *ngIf="etageSelected != etage.numero || baimentId != batiment.id">{{etage.demeurant}}</td>
+                      <td *ngIf="etageSelected != etage.numero || baimentId != batiment.id" class="td-actions text-right">
+                        <button (click)="selectEtageForUpdate(etage.numero, batiment.id);" type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
                           <i class="material-icons">edit</i>
                         </button>
                         <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
                           <i class="material-icons">close</i>
                         </button>
                       </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" name="optionsCheckboxes">
-                          </label>
+                      <td *ngIf="etageSelected == etage.numero && baimentId == batiment.id">Etage {{etage.numero}}</td>
+                      <td *ngIf="etageSelected == etage.numero && baimentId == batiment.id">
+                        {{etage.chambres.length}}
+                      </td>
+                      <td *ngIf="etageSelected == etage.numero && baimentId == batiment.id">
+                        <div class="form-group label-floating">
+                          <label class="control-label">Position</label>
+                          <input [(ngModel)]="etage.chambres[0].nbposition" type="number" class="form-control">
                         </div>
                       </td>
-                      <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                      </td>
-                      <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                          <i class="material-icons">edit</i>
-                        </button>
-                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                          <i class="material-icons">close</i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" name="optionsCheckboxes" checked>
-                          </label>
+                      <td *ngIf="etageSelected == etage.numero && baimentId == batiment.id">
+                        <div class="form-group label-floating">
+                          <label class="control-label">Demeurant</label>
+                          <select [(ngModel)]="etage.demeurant" name="demeurant" class="form-control">
+                            <option value="Masculin" >Masculin</option>
+                            <option value="Feminin">Feminin</option>
+                            <option value="UniSexe">UniSexe</option>
+                          </select>
                         </div>
                       </td>
-                      <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                      <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                          <i class="material-icons">edit</i>
-                        </button>
-                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                          <i class="material-icons">close</i>
+                      <td *ngIf="etageSelected == etage.numero && baimentId == batiment.id" class="td-actions text-right">
+                        <button (click)="validateSelectEtageForUpdate(etage);" type="button" rel="tooltip" title="Edit Task" class="btn btn-success btn-simple btn-xs">
+                          <i class="material-icons">check</i>
                         </button>
                       </td>
                     </tr>

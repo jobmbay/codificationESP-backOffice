@@ -7,6 +7,7 @@ import {OfferDetailsComponent} from "./offer-details/offer-details.component";
 import {ProjetsComponent} from "./projets/projets.component";
 import {ProjetDetailsComponent} from "./projets/projet-details/projet-details.component";
 import {CreerBatimentComponent} from "./creer-batiment/creer-batiment.component";
+import {CreerEtageComponent} from "./creer-etage/creer-etage.component";
 /**
  * Created by jobmbay on 12/1/17.
 import {AccueilComponent} from "./accueil/accueil.component";
@@ -20,10 +21,11 @@ const HOME_ROUTES : Routes =[
     children : [
       {path: 'dashboard', component: DashboardComponent},
       {path: 'batiments/liste', component: OffresComponent},
-      {path: 'batiments/creer', component: CreerBatimentComponent},
+      {path: 'batiments/creer', component: CreerBatimentComponent}/*,
+      {path: 'etages/creer', component: CreerEtageComponent},
       {path: 'offres/details', component: OfferDetailsComponent},
       {path: 'etages/liste', component: ProjetsComponent},
-      {path: 'projets/details', component: ProjetDetailsComponent}
+      {path: 'projets/details', component: ProjetDetailsComponent}*/
     ]
   }
 

@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
     this.dataService.login(this.user)
       .subscribe(
         data=>{
+          console.log("ccccccccc", data)
           this.dataService.setUser(data["user"]);
           this.dataService.setTocken(data["id"]);
           this.router.navigate(['home/dashboard']);

@@ -25,84 +25,41 @@
                   <label class="control-label">Nom du batiment</label>
                   <input [(ngModel)]="batiment.label" type="text" class="form-control">
                 </div>
-                <h2 style="color: purple;">Selectionner les étages de ce batiment</h2>
-                <table class="table">
-                  <tbody>
-                  <tr>
-                    <td>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox" name="optionsCheckboxes" checked>
-                        </label>
-                      </div>
-                    </td>
-                    <td>Sign contract for "What are conference organizers afraid of?"</td>
-                    <td class="td-actions text-right">
-                      <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                        <i class="material-icons">edit</i>
-                      </button>
-                      <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                        <i class="material-icons">close</i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox" name="optionsCheckboxes">
-                        </label>
-                      </div>
-                    </td>
-                    <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                    <td class="td-actions text-right">
-                      <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                        <i class="material-icons">edit</i>
-                      </button>
-                      <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                        <i class="material-icons">close</i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox" name="optionsCheckboxes">
-                        </label>
-                      </div>
-                    </td>
-                    <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                    </td>
-                    <td class="td-actions text-right">
-                      <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                        <i class="material-icons">edit</i>
-                      </button>
-                      <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                        <i class="material-icons">close</i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox" name="optionsCheckboxes" checked>
-                        </label>
-                      </div>
-                    </td>
-                    <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                    <td class="td-actions text-right">
-                      <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                        <i class="material-icons">edit</i>
-                      </button>
-                      <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                        <i class="material-icons">close</i>
-                      </button>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
+                <div class="form-group label-floating">
+                  <label class="control-label">Nombre d'etage</label>
+                  <input (change)="updateNbEtage();" [(ngModel)]="batiment.nombreetage" type="number" class="form-control">
+                </div>
+                <h2 style="color: purple;">Attribuer pour chaque étage le nombre de chambre</h2>
+                <div *ngFor="let etage of etages" class="row">
+                  <div class="col-md-2">
+                    <h2>{{etage.num}}</h2>
+                  </div>
+                  <div class="col-md-4">
+                    <h2>Etage {{etage.num}}</h2>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group label-floating">
+                      <label class="control-label">Nombre de chambre</label>
+                      <input [(ngModel)]="etage.nbChambre" type="number" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group label-floating">
+                      <label class="control-label">Nombre de position</label>
+                      <input [(ngModel)]="etage.nbPosition" type="number" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group label-floating">
+                      <label class="control-label">Sexe des demeurants</label>
+                      <select [(ngModel)]="etage.demeurant" name="demeurant" class="form-control">
+                        <option value="Masculin" >Masculin</option>
+                        <option value="Feminin">Feminin</option>
+                        <option value="UniSexe">UniSexe</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
                 <p style="text-align: center;">
                   <button class="btn btn-danger" (click)="annuler()">Annuler</button>
                   <button class="btn" style="background: purple;" (click)="valider();">Valider</button></p>

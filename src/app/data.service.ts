@@ -15,19 +15,22 @@ export class DataService {
   }
 
   login(data) {
-    return this.http.post(this.baseUrl + "Etudiants/login?include=user", data)
+    return this.http.post(this.baseUrl + "Admins/login?include=user", data)
       .map((res:Response) => res.json());
   }
 
   post(url,data) {
+    console.log(data)
     return this.http.post(this.baseUrl + url, data)
       .map((res:Response) => res.json());
   }
 
   patch(url,data) {
-    return this.http.patch(this.baseUrl + url + "/" + data.id, data)
+    return this.http.patch(this.baseUrl + url, data)
       .map((res:Response) => res.json());
   }
+
+
 
   delete(url,id) {
     return this.http.delete(this.baseUrl + url + "/" + id,)
@@ -50,6 +53,11 @@ export class DataService {
     return JSON.parse(localStorage.getItem("userAccount"));
   }
 
+  putRel(urlF,urlS,idF,idS) {
+    console.log(this.baseUrl + urlF + "/" + idF  + "/" + urlS + "/rel/" + idS)
+    return this.http.put(this.baseUrl + urlF + "/" + idF  + "/" + urlS + "/rel/" + idS, {})
+      .map((res:Response) => res.json());
+  }
 
   setTocken(token)
   {

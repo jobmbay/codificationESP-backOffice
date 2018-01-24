@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from "../../data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-creer-etage',
@@ -11,9 +13,26 @@ export class CreerEtageComponent implements OnInit {
     numero : 0
   };
 
-  constructor() { }
+  constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  valider()
+  {
+    this.dataService.post("Etages",this.etage)
+      .subscribe(
+        data=>{
+          this.router.navigate(["/home/etages/liste"]);
+        },
+        err=> console.log(err)
+      )
+  }
+
+
+  annuler()
+  {
+    this.router.navigate(["/home/etages/liste"])
   }
 
 }

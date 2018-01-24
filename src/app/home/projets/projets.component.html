@@ -1,27 +1,107 @@
 <div class="row">
   <div class="col-md-9"></div>
   <div class="col-md-3">
-    <button (click)="creerBatimentPage()" class="btn" style="background: purple;">Nouveau etage</button>
+    <button (click)="creerEtagePage()" class="btn" style="background: purple;">Nouveau etage</button>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-12">
-    <div class="card">
-      <div class="card-header" data-background-color="purple">
-        <h2 class="title"> <i class="material-icons">library_books</i>Liste des Projets</h2>
+<div class="col-lg-12 col-md-12">
+  <div class="card card-nav-tabs">
+    <div class="card-header" data-background-color="purple">
+      <div class="nav-tabs-navigation">
+        <div class="nav-tabs-wrapper">
+          <ul class="nav nav-tabs nav-justified">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab">Departements</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#panel2" role="tab">Option</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#panel3" role="tab">Cycle</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#panel4" role="tab">Niveau</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-4"  *ngFor="let etage of etages">
-    <div class="card">
-      <div class="card-header card-chart" data-background-color="blue">
-        <div class="ct-chart" id="dailySalesChart"><img style="width: 100%;" src="assets/img/etage.jpg" alt="" class="resize"></div>
-      </div>
-      <div class="card-content">
-        <h2 class="title"><span class="text-success">Intitulé :  </span> etage 1</h2>
+    <div class="card-content">
+      <div class="tab-content">
+        <div class="tab-pane active" id="profile">
+          <div class="">
+            <!--Panel 1-->
+            <div class="fade in show active" id="panel1" role="tabpanel">
+              <br>
+              <h3 style="color: purple; text-align: center;">Ajouter un nouveau departement</h3>
+              <div class="row">
+                <div class="form-group label-floating col-md-10">
+                  <label class="control-label">Nom du batiment</label>
+                  <input type="text" class="form-control">
+                </div>
+                <div class="form-group label-floating col-md-2">
+                  <button class="btn btn-success">Valider</button>
+                </div>
+              </div>
+              <br>
+              <h2 style="color: purple; text-align: center;">Liste des departements</h2>
+              <br>
+              <div class="card-content">
+                <table class="table">
+                  <tbody>
+                  <tr>
+                    <th>
+                      <h3 style="color: purple;">Nom batiment</h3>
+                    </th>
+                    <th class="td-actions text-right">
+                      <h3 style="color: purple;">Action</h3>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h4>Genie Informatique</h4>
+                    </td>
+                    <td class="td-actions text-right">
+                      <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                        <i class="material-icons">edit</i>
+                      </button>
+                      <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                        <i class="material-icons">close</i>
+                      </button>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!--/.Panel 1-->
+            <!--Panel 2-->
+            <div class="tab-pane fade" id="panel2" role="tabpanel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+                reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+                porro voluptate odit minima.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+                reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+                porro voluptate odit minima.</p>
+            </div>
+            <!--/.Panel 2-->
+            <!--Panel 3-->
+            <div class="tab-pane fade" id="panel3" role="tabpanel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+                reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+                porro voluptate odit minima.</p>
+            </div>
+            <!--/.Panel 3-->
+            <!--Panel 4-->
+            <div class="tab-pane fade" id="panel4" role="tabpanel">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
+                reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
+                porro voluptate odit minima.</p>
+            </div>
+            <!--/.Panel 4-->
+          </div>
+        </div>
       </div>
     </div>
   </div>
