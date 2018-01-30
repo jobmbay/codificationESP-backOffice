@@ -11,6 +11,7 @@ import {FormsModule} from "@angular/forms";
 import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
 import {ChartModule} from "angular2-highcharts";
 import {DashboardComponent} from "./dashboard/dashboard.component";
+import { EtudiantDetailsComponent } from './etudiant-details/etudiant-details.component';
 
 declare let require: any;
 
@@ -44,7 +45,8 @@ export function highchartsFactory() {
     ProjetsComponent,
     ProjetDetailsComponent,
     CreerEtageComponent,
-    DashboardComponent
+    DashboardComponent,
+    EtudiantDetailsComponent
   ]
 })
 export class HomeModule { }
