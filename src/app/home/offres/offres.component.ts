@@ -24,7 +24,7 @@ export class OffresComponent implements OnInit {
 
   initialiseData()
   {
-    this.dataService.get('Batiments?filter=' + encodeURIComponent('{"order":"etages.numero","include": {"etages": "chambres"}}'))
+    this.dataService.get('Batiments?filter=' + encodeURIComponent('{"include": {"etages": "chambres"}}'))
       .subscribe(
         data=>{
           this.batiments = data;

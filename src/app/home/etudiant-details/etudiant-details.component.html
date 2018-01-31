@@ -23,81 +23,19 @@
                                 </th>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Papa Youssouf</td>
-                                    <td>LAM</td>
-                                    <td>770900631</td>
-                                    <td>Genie Informatique</td>
-                                    <td>Pavillon C</td>
-                                    <td>Etage 2</td>
-                                    <td>43</td>
+                                <tr *ngFor="let etudiant of etudiants" >
+                                    <td>{{etudiant.prenom}} </td>
+                                    <td>{{etudiant.nom}}</td>
+                                    <td>{{etudiant.telephone}}</td>
+                                    <td>{{etudiant.departementId}}</td>
+                                    <td>{{etudiant.position.chambre.etage.batiment.label}}</td>
+                                    <td>Etage{{etudiant.position.chambre.etage.numero}}</td>
+                                    <td>{{etudiant.position.chambre.numero}}</td>
                                     <td class="td-actions text-right">
                                       <button type="button" rel="tooltip" title="Details" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-simple btn-xs hoverable">
                                         <i class="material-icons ">visibility</i>
                                       </button>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td>Papa Youssouf</td>
-                                    <td>LAM</td>
-                                    <td>770900631</td>
-                                    <td>Genie Informatique</td>
-                                    <td>Pavillon C</td>
-                                    <td>Etage 2</td>
-                                    <td>43</td>
-                                    <td class="td-actions text-right">
-                                      <button type="button" rel="tooltip" title="Details" class="btn btn-primary btn-simple btn-xs hoverable">
-                                        <i class="material-icons ">visibility</i>
-                                      </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Papa Youssouf</td>
-                                    <td>LAM</td>
-                                    <td>770900631</td>
-                                    <td>Genie Informatique</td>
-                                    <td>Pavillon C</td>
-                                    <td>Etage 2</td>
-                                    <td>43</td>
-                                    <td class="td-actions text-right">
-                                      <button type="button" rel="tooltip" title="Details" class="btn btn-primary btn-simple btn-xs hoverable">
-                                        <i class="material-icons ">visibility</i>
-                                      </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Papa Youssouf</td>
-                                    <td>LAM</td>
-                                    <td>770900631</td>
-                                    <td>Genie Informatique</td>
-                                    <td>Pavillon C</td>
-                                    <td>Etage 2</td>
-                                    <td>43</td>
-                                    <td class="td-actions text-right">
-                                      <button type="button" rel="tooltip" title="Details" class="btn btn-primary btn-simple btn-xs hoverable">
-                                        <i class="material-icons ">visibility</i>
-                                      </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Papa Youssouf</td>
-                                    <td>LAM</td>
-                                    <td>770900631</td>
-                                    <td>Genie Informatique</td>
-                                    <td>Pavillon C</td>
-                                    <td>Etage 2</td>
-                                    <td>43</td>
-                                    <td class="td-actions text-right">
-                                      <button type="button" rel="tooltip" title="Details" class="btn btn-primary btn-simple btn-xs hoverable">
-                                        <i class="material-icons ">visibility</i>
-                                      </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Mason Porter</td>
-                                    <td>Chile</td>
-                                    <td>Gloucester</td>
-                                    <td class="text-primary">$78,615</td>
                                 </tr>
                             </tbody>
                         </table>
